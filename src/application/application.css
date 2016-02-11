@@ -1,0 +1,144 @@
+.group {
+	-fx-border-color: gray;
+	-fx-border-style: solid;
+	-fx-border-width: 1;
+}
+
+.ndtcq {
+	-fx-font-family: "Helvetica";
+	-fx-font-size: 18;
+	-fx-text-inner-color: #6f6f6f;
+	-fx-text-fill: #6f6f6f;
+    -fx-background-color: #ffffff;
+    -fx-background-insets: 0;
+    -fx-padding: 0 0 0 0;
+    -fx-pref-height: 35;
+
+    -fx-border-color: gray;
+}
+
+.ndtcq .list-cell {
+	-fx-text-inner-color: #6f6f6f;
+	-fx-text-fill: #6f6f6f;
+	-fx-padding: 0 0 0 0;
+	-fx-pref-height: 35;
+    -fx-alignment: center;
+}
+
+.ndtcq:focused {
+	-fx-background-color: #b9e9df;
+    -fx-padding: 0 0 0 0;
+}
+
+.ndtcq .list-view .list-cell:filled:hover {
+	-fx-background-color: #b9e9df;
+	-fx-text-inner-color: #6f6f6f;
+	-fx-text-fill: #6f6f6f;
+    -fx-alignment: center;
+}
+
+.ndtcq .list-view .list-cell:filled:selected, .ndtcq .list-view .list-cell:filled:selected:hover {
+	-fx-background-color: #b9e9df;
+	-fx-text-inner-color: #6f6f6f;
+	-fx-text-fill: #6f6f6f;
+    -fx-alignment: center;
+}
+
+.ndtcq .arrow, .combo-box .arrow-button {
+	-fx-opacity: 0.0;
+	-fx-padding: 0 0 0 0;
+}
+
+.ndtcq .scroll-bar {
+	-fx-background-color: rgb(255,255,255);
+	-fx-background-radius: 2em;
+}
+
+.ndtcq .scroll-bar:horizontal .track, .ndtcq .scroll-bar:vertical .track {
+	-fx-background-color: transparent;
+	-fx-border-color:transparent;
+	-fx-background-radius: 2em;
+}
+
+.ndtcq .scroll-bar:vertical .track-background, .ndtcq .scroll-bar:horizontal .track-background {
+	-fx-background-color: transparent;
+	-fx-background-insets: 0;
+	-fx-background-radius: 2em;
+}
+
+.ndtcq .scroll-bar:horizontal .thumb {
+	-fx-background-color: rgb(211,211,211);
+	-fx-background-insets: 4 0 4 0;
+	-fx-background-radius: 2em;
+}
+
+.ndtcq .scroll-bar:vertical .thumb {
+	-fx-background-color: rgb(187,224,229);
+	-fx-background-insets: 0 4 0 4;
+	-fx-background-radius: 2em;
+}
+
+.ndtcq .scroll-bar:horizontal .thumb:hover, .ndtcq .scroll-bar:vertical .thumb:hover {
+	-fx-background-color: rgb(187,224,229);
+}
+
+.ndtcq .scroll-bar:horizontal .thumb:pressed, .ndtcq .scroll-bar:vertical .thumb:pressed {
+	-fx-background-color: rgb(187,224,229);
+}
+
+.ndtcq .scroll-bar:vertical .increment-button, .ndtcq .scroll-bar:vertical .decrement-button {
+	-fx-background-color:transparent;
+	-fx-background-radius: 2em;
+	-fx-padding: 5;
+}
+
+.ndtcq .scroll-bar:horizontal .increment-button, .ndtcq .scroll-bar:horizontal .decrement-button {
+	-fx-background-color:transparent;
+	-fx-background-radius: 2em;
+	-fx-padding: 5;
+}
+
+.ndtcq .scroll-bar:horizontal .increment-arrow {
+	-fx-shape: "M 0 0 L 4 8 L 8 0 Z";
+	-fx-background-color: rgb(211,211,211);
+	-fx-padding: 0.25em;
+	-fx-rotate: -90;
+}
+
+.ndtcq .scroll-bar:vertical .increment-arrow {
+	-fx-background-color: rgb(211,211,211);
+	-fx-shape: "M 0 0 L 4 8 L 8 0 Z";
+	-fx-padding: 0.25em;
+	-fx-rotate: 0;
+}
+
+.ndtcq .scroll-bar:horizontal .decrement-arrow {
+	-fx-background-color: rgb(211,211,211);
+	-fx-shape: "M 0 0 L 4 8 L 8 0 Z";
+	-fx-padding: 0.25em;
+	-fx-rotate: 90;
+}
+
+.ndtcq .scroll-bar:vertical .decrement-arrow {
+	-fx-background-color: rgb(211,211,211);
+	-fx-shape: "M 0 0 L 4 8 L 8 0 Z";
+	-fx-padding: 0.25em;
+	-fx-rotate: -180;
+}
+
+.ndtcq .scroll-bar:vertical:focused, .ndtcq .scroll-bar:horizontal:focused {
+	-fx-background-color: transparent,rgb(96,96,96),rgb(96,96,96);
+}
+
+.seleccion {
+	-fx-font-family: "Helvetica";
+	-fx-font-size: 20;
+	-fx-text-inner-color: #6f6f6f;
+	-fx-text-fill: #6f6f6f;
+    -fx-background-color: #b9e9df;
+    -fx-border-color: gray;
+    -fx-background-insets: 0;
+    -fx-padding: 1 3 1 3;
+    -fx-pref-height: 35;
+    -fx-alignment: center
+}
