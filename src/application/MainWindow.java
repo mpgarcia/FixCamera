@@ -8,6 +8,8 @@ import javafx.event.EventHandler;
 import javafx.scene.Cursor;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
@@ -39,7 +41,7 @@ public class MainWindow extends Pane {
         camaraText.setFill(Color.GRAY);
         camaraText.setTextAlignment(TextAlignment.CENTER);
         camaraText.setTranslateX(50);
-        camaraText.setTranslateY(70);
+        camaraText.setTranslateY(130);
 		
 		Text destinoText = new Text("DESTINO DEL VIDEO");
 		destinoText.setFont(Font.font("Helvetica", 20));
@@ -47,14 +49,14 @@ public class MainWindow extends Pane {
 		destinoText.setFill(Color.GRAY);
 		destinoText.setTextAlignment(TextAlignment.CENTER);
 		destinoText.setTranslateX(50);
-		destinoText.setTranslateY(190);
+		destinoText.setTranslateY(230);
 
 		ObservableList<String> options = FXCollections.observableArrayList();
 		ComboBox<String> unidades = new ComboBox<String>(options);
 		unidades.getStyleClass().add("ndtcq");
 		unidades.setPrefWidth(100);
 		unidades.setTranslateX(145);
-		unidades.setTranslateY(90);
+		unidades.setTranslateY(150);
 		unidades.addEventFilter(MouseEvent.MOUSE_ENTERED, mouseEntered);
 		unidades.addEventFilter(MouseEvent.MOUSE_EXITED, mouseExited);
 		
@@ -63,7 +65,7 @@ public class MainWindow extends Pane {
 		destino.getStyleClass().add("seleccion");
 		destino.setPrefWidth(260);
 		destino.setTranslateX(65);
-		destino.setTranslateY(210);
+		destino.setTranslateY(250);
 		destino.addEventFilter(MouseEvent.MOUSE_ENTERED, mouseEntered);
 		destino.addEventFilter(MouseEvent.MOUSE_EXITED, mouseExited);
 		destino.addEventFilter(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>() {
@@ -82,10 +84,10 @@ public class MainWindow extends Pane {
 		
 		Label aceptar = new Label("ACEPTAR");
 		aceptar.getStyleClass().add("seleccion");
-		aceptar.setStyle("-fx-background-color: #82acf3; -fx-text-fill: #ffffff");
+		aceptar.setStyle("-fx-background-color: #009ad8; -fx-text-fill: #ffffff");
 		aceptar.setPrefWidth(100);
 		aceptar.setTranslateX(145);
-		aceptar.setTranslateY(310);
+		aceptar.setTranslateY(330);
 		aceptar.addEventFilter(MouseEvent.MOUSE_ENTERED, mouseEntered);
 		aceptar.addEventFilter(MouseEvent.MOUSE_EXITED, mouseExited);
 		aceptar.addEventFilter(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>() {
@@ -99,7 +101,12 @@ public class MainWindow extends Pane {
 		    }
 		});
 		
-		this.getChildren().addAll(unidades, camaraText, destinoText, destino, aceptar);
+		Image imageSVLogo = new Image(getClass().getResourceAsStream("/resources/svlogo.png"));
+        Label SVLogo = new Label("", new ImageView(imageSVLogo));
+        SVLogo.setTranslateX(1);
+        SVLogo.setTranslateY(1);
+		
+		this.getChildren().addAll(unidades, camaraText, destinoText, destino, aceptar, SVLogo);
 		
 		File[] paths;
 		paths = File.listRoots();
