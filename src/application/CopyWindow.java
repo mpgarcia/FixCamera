@@ -18,6 +18,7 @@ import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 import java.util.TimeZone;
+import org.apache.commons.io.*;
 
 import javafx.animation.AnimationTimer;
 import javafx.application.Platform;
@@ -36,7 +37,7 @@ public class CopyWindow extends Pane {
 		Image imageProcess = new Image(getClass().getResourceAsStream("/resources/process.png"));
         Label process = new Label("", new ImageView(imageProcess));
         process.setTranslateX(150);
-        process.setTranslateY(160);
+        process.setTranslateY(210);
 
 		Image imageSVLogo = new Image(getClass().getResourceAsStream("/resources/svlogo.png"));
         Label SVLogo = new Label("", new ImageView(imageSVLogo));
@@ -57,7 +58,7 @@ public class CopyWindow extends Pane {
 		textDesc.setFill(Color.GRAY);
 		textDesc.setTextAlignment(TextAlignment.CENTER);
 		textDesc.setTranslateX(50);
-		textDesc.setTranslateY(140);
+		textDesc.setTranslateY(150);
         
 		AnimationTimer timeline = new AnimationTimer() {
 			int j = 0;
@@ -102,7 +103,7 @@ public class CopyWindow extends Pane {
 			    	*/
 
 			        try {
-			        	String garmin = "C:/SISTEMA/gps/gpsbabel.exe -t -i garmin_fit -f " + file.getAbsolutePath() + " -x track,faketime=f" + startGPS + "+5 -o gpx -F " + destino + "/" + file.getName().replace(".fit", ".gpx");
+			        	String garmin = "D:/SISTEMA/gps/gpsbabel.exe -t -i garmin_fit -f " + file.getAbsolutePath() + " -x track,faketime=f" + startGPS + "+5 -o gpx -F " + destino + "/" + file.getName().replace(".fit", ".gpx");
 						Process runProcess = Runtime.getRuntime().exec("cmd /c " + garmin);
 						runProcess.waitFor();
 					}
@@ -391,6 +392,31 @@ public class CopyWindow extends Pane {
 					catch (IOException | ParseException e) { e.printStackTrace(); }
 				}
 				start = false;
+			}
+			
+			//COPIANDO VIDEOS
+			File folderMedia = new File(origen + "DCIM/100_VIRB/");
+			File[] listOfMedia = folderMedia.listFiles();
+
+			Platform.runLater( () -> text.setText("COPIANDO VIDEOS"));
+			for (File file : listOfMedia) {
+			    if (file.isFile() && file.getName().toUpperCase().contains(".MP4")) {
+			    	Platform.runLater( () -> textDesc.setText("Copiando " + file.getName()));
+			    	File fileDest = new File(destino + "/" + file.getName());
+			    	try { FileUtils.copyFile(file, fileDest); }
+			    	catch (IOException e) { e.printStackTrace(); }
+			    }
+			}
+			
+			
+			//BORRANDO TEMPORALES
+			Platform.runLater( () -> text.setText("BORRANDO TEMPORALES"));
+			for (int i=0;i<gpxList.size();i++) {
+				if (gpxList.get(i).exists()) {
+					String name = gpxList.get(i).getName();
+					Platform.runLater( () -> textDesc.setText("Borrando " + name));
+					gpxList.get(i).delete();
+				}
 			}
 		}});
 		tgps.start();

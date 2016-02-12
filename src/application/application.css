@@ -1,3 +1,15 @@
+@font-face {
+    font-family: KelsonSans-Bold;
+    src: url('KelsonSansBold.otf');
+}
+
+
+.titleText {
+    -fx-font: 24px KelsonSans-Bold;
+    -fx-font-weight: bold;
+    -fx-fill: #00a1dd;
+}
+
 .group {
 	-fx-border-color: gray;
 	-fx-border-style: solid;
@@ -8,8 +20,8 @@
 	-fx-font-family: "Helvetica";
 	-fx-font-size: 18;
 	-fx-text-inner-color: #6f6f6f;
-	-fx-text-fill: #6f6f6f;
-    -fx-background-color: #ffffff;
+	-fx-text-fill: #ffffff;
+    -fx-background-color: #b0c701;
     -fx-background-insets: 0;
     -fx-padding: 0 0 0 0;
     -fx-pref-height: 35;
@@ -18,29 +30,30 @@
 }
 
 .ndtcq .list-cell {
+	-fx-background-color: #b0c701;
 	-fx-text-inner-color: #6f6f6f;
-	-fx-text-fill: #6f6f6f;
+	-fx-text-fill: #ffffff;
 	-fx-padding: 0 0 0 0;
 	-fx-pref-height: 35;
     -fx-alignment: center;
 }
 
 .ndtcq:focused {
-	-fx-background-color: #b9e9df;
+	-fx-background-color: #b0c701;
     -fx-padding: 0 0 0 0;
 }
 
 .ndtcq .list-view .list-cell:filled:hover {
-	-fx-background-color: #b9e9df;
+	-fx-background-color: #00a1dd;
 	-fx-text-inner-color: #6f6f6f;
-	-fx-text-fill: #6f6f6f;
+	-fx-text-fill: #ffffff;
     -fx-alignment: center;
 }
 
 .ndtcq .list-view .list-cell:filled:selected, .ndtcq .list-view .list-cell:filled:selected:hover {
-	-fx-background-color: #b9e9df;
+	-fx-background-color: #00a1dd;
 	-fx-text-inner-color: #6f6f6f;
-	-fx-text-fill: #6f6f6f;
+	-fx-text-fill: #ffffff;
     -fx-alignment: center;
 }
 
@@ -134,8 +147,8 @@
 	-fx-font-family: "Helvetica";
 	-fx-font-size: 20;
 	-fx-text-inner-color: #6f6f6f;
-	-fx-text-fill: #6f6f6f;
-    -fx-background-color: #b9e9df;
+	-fx-text-fill: #ffffff;
+    -fx-background-color: #b0c701;
     -fx-border-color: gray;
     -fx-background-insets: 0;
     -fx-padding: 1 3 1 3;

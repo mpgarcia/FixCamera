@@ -34,6 +34,13 @@ public class MainWindow extends Pane {
 		    	application.Main.scene.setCursor(Cursor.DEFAULT);
 		    }
 		};
+
+		Text titleText = new Text(" FIX GPS");
+		titleText.getStyleClass().add("titleText");
+		titleText.setTextAlignment(TextAlignment.CENTER);
+		titleText.setWrappingWidth(50);
+		titleText.setTranslateX(330);
+		titleText.setTranslateY(40);
 		
 		Text camaraText = new Text("UNIDAD DE LA CAMARA");
         camaraText.setFont(Font.font("Helvetica", 20));
@@ -61,7 +68,7 @@ public class MainWindow extends Pane {
 		unidades.addEventFilter(MouseEvent.MOUSE_EXITED, mouseExited);
 		
 		Label destino = new Label("SELECCIONE");
-		destino.setText("C:/SISTEMA/CAMARAS");
+		destino.setText("D:/SISTEMA/CAMARAS");
 		destino.getStyleClass().add("seleccion");
 		destino.setPrefWidth(260);
 		destino.setTranslateX(65);
@@ -69,7 +76,7 @@ public class MainWindow extends Pane {
 		destino.addEventFilter(MouseEvent.MOUSE_ENTERED, mouseEntered);
 		destino.addEventFilter(MouseEvent.MOUSE_EXITED, mouseExited);
 		destino.addEventFilter(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>() {
-			File directory = new File("C:/SISTEMA/CAMARAS");
+			File directory = new File("D:/SISTEMA/CAMARAS");
 		    @Override
 		    public void handle(MouseEvent mouseEvent) {
 		    	DirectoryChooser fchoose = new DirectoryChooser();
@@ -106,7 +113,7 @@ public class MainWindow extends Pane {
         SVLogo.setTranslateX(1);
         SVLogo.setTranslateY(1);
 		
-		this.getChildren().addAll(unidades, camaraText, destinoText, destino, aceptar, SVLogo);
+		this.getChildren().addAll(unidades, camaraText, destinoText, destino, aceptar, SVLogo, titleText);
 		
 		File[] paths;
 		paths = File.listRoots();
